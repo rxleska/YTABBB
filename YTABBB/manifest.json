@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Ad Blocker Blocker Blocker",
+    "version": "1.0",
+    "permissions": [
+      "activeTab",
+      "*://*.youtube.com/*",
+      "webNavigation",
+      "storage"
+    ],
+    "applications": {
+        "gecko": {
+            "id": "YTABBB@example.com"
+        }
+    },
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+          "16": "icons/icon-16.png",
+          "48": "icons/icon-48.png",
+          "128": "icons/icon-128.png"
+      
+    }
+  }
+}
+  
